@@ -9,10 +9,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
+// import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import TemporaryDrawer from './Drawer';
+import LoginIcon from '@mui/icons-material/Login';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -97,6 +99,7 @@ export default function PrimarySearchAppBar() {
         >
             <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
         </Menu>
     );
 
@@ -117,14 +120,7 @@ export default function PrimarySearchAppBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <p>Messages</p>
-            </MenuItem>
+
             <MenuItem>
                 <IconButton
                     size="large"
@@ -149,17 +145,21 @@ export default function PrimarySearchAppBar() {
                 </IconButton>
                 <p>Profile</p>
             </MenuItem>
+            {/* <MenuItem className='text-center'>
+                
+            </MenuItem> */}
+
         </Menu>
     );
 
     return (
         <Box sx={{ flexGrow: 1 }} className=" bg-black shadow-none" >
-            <AppBar sx={{backgroundColor:'black'}} position="static" className="container mx-auto bg-black shadow-none">
-                <div  className='bg-black p-0 shadow-none flex justify-between items-center gap-3 my-2'>
+            <AppBar sx={{ backgroundColor: 'black' }} position="static" className="container mx-auto bg-black shadow-none">
+                <div className='bg-black p-0 shadow-none flex justify-between items-center gap-3 my-2'>
                     <div className='text-white'>
                         <TemporaryDrawer></TemporaryDrawer>
                     </div>
-                    
+
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -171,11 +171,6 @@ export default function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="error">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
                         <IconButton
                             size="large"
                             aria-label="show 17 new notifications"
@@ -185,7 +180,7 @@ export default function PrimarySearchAppBar() {
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
-                        <IconButton
+                        {/* <IconButton
                             size="large"
                             edge="end"
                             aria-label="account of current user"
@@ -195,7 +190,18 @@ export default function PrimarySearchAppBar() {
                             color="inherit"
                         >
                             <AccountCircle />
+                        </IconButton> */}
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="account of current user"
+                            aria-controls={menuId}
+                            aria-haspopup="true"
+                            color="inherit"
+                        >
+                            <Link to='/login' className='text-center'> <LoginIcon></LoginIcon>  </Link>
                         </IconButton>
+
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
