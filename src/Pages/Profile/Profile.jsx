@@ -7,7 +7,7 @@ const Profile = () => {
         <div className=" min-h-screen flex justify-center items-center ">
             <div>
                 <div className="flex justify-center items-center">
-                    <img src={user?.photoURL} alt="User Photo" />
+                    <img className="rounded-full" src={user?.photoURL} alt="User Photo" />
                 </div>
                 <div className="text-center">
                     <h1>Name : {user?.displayName}</h1>

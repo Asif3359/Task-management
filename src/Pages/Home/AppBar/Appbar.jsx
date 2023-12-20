@@ -14,7 +14,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import TemporaryDrawer from './Drawer';
 import LoginIcon from '@mui/icons-material/Login';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/UseSuth';
 
 const Search = styled('div')(({ theme }) => ({
@@ -58,7 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -81,6 +82,13 @@ export default function PrimarySearchAppBar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                navigate('/')
+            })
+            .catch(error => console.log(error));
+    }
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -101,7 +109,7 @@ export default function PrimarySearchAppBar() {
         >
             <MenuItem onClick={handleMenuClose}> <Link to='profile'>Profile</Link></MenuItem>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-            <MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
+            <MenuItem onClick={handleMenuClose}><button onClick={handleLogOut}>LogOut</button></MenuItem>
         </Menu>
     );
 
@@ -193,7 +201,7 @@ export default function PrimarySearchAppBar() {
                                 onClick={handleProfileMenuOpen}
                                 color="inherit"
                             >
-                                <AccountCircle />
+                                <img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="" />
                             </IconButton></> : <><IconButton
                                 size="large"
                                 edge="end"
