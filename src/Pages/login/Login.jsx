@@ -93,7 +93,7 @@ const LogIn = () => {
                         <div className="form-control mt-6">
                             <input className="btn  btn-sm" type="submit" value="Sign Up" />
                         </div>
-                        <p>Don&apos;t have an account please! <Link to="/register" className="font-bold text-yellow-600 hover:underline">Register</Link> </p>
+                        <p>Don&apos;t have an account please! <Link to="/singup" className="font-bold text-yellow-600 hover:underline">Sing Up</Link> </p>
                         <div className="text-center">
                             <h1 className="text-xl font-bold">Log in With</h1>
                         </div>

@@ -158,7 +158,7 @@ const SingUp = () => {
                         {
                             fireBaseError ? <p className="text-red-500">{fireBaseError}</p> : <></>
                         }
-                        <p>Don&apos;t have an account please! <Link to="/joinUs" className="font-bold text-yellow-600 hover:underline">Log In</Link> </p>
+                        <p>Don&apos;t have an account please! <Link to="/login" className="font-bold text-yellow-600 hover:underline">Log In</Link> </p>
                         <div className="text-center">
                             <h1 className="text-xl font-bold">Log in With</h1>
                         </div>
