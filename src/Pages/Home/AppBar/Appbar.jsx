@@ -15,6 +15,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import TemporaryDrawer from './Drawer';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/UseSuth';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,6 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+    const { user } = useAuth();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -97,7 +99,7 @@ export default function PrimarySearchAppBar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+            <MenuItem onClick={handleMenuClose}> <Link to='profile'>Profile</Link></MenuItem>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
             <MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
         </Menu>
@@ -143,7 +145,7 @@ export default function PrimarySearchAppBar() {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Profile</p>
+                <Link to='profile'>Profile</Link>
             </MenuItem>
             {/* <MenuItem className='text-center'>
                 
@@ -180,27 +182,30 @@ export default function PrimarySearchAppBar() {
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
-                        {/* <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton> */}
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            color="inherit"
-                        >
-                            <Link to='/login' className='text-center'> <LoginIcon></LoginIcon>  </Link>
-                        </IconButton>
+                        {/*  */}
+                        {
+                            user ? <><IconButton
+                                size="large"
+                                edge="end"
+                                aria-label="account of current user"
+                                aria-controls={menuId}
+                                aria-haspopup="true"
+                                onClick={handleProfileMenuOpen}
+                                color="inherit"
+                            >
+                                <AccountCircle />
+                            </IconButton></> : <><IconButton
+                                size="large"
+                                edge="end"
+                                aria-label="account of current user"
+                                aria-controls={menuId}
+                                aria-haspopup="true"
+                                color="inherit"
+                            >
+                                <Link to='/login' className='text-center'> <LoginIcon></LoginIcon>  </Link>
+                            </IconButton></>
+                        }
+
 
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
