@@ -1,12 +1,21 @@
-import './App.css'
+import Footer from "./Pages/Home/Footer/Footer";
+import PrimarySearchAppBar from "./Pages/Home/AppBar/Appbar";
+import { Outlet } from "react-router-dom";
 
-function App() {
+const App = () => {
+    return (
+        <div>
+            <div>
+                <PrimarySearchAppBar></PrimarySearchAppBar>
+            </div>
+            <div className="min-h-screen mt-0 container mx-auto ">
+                <Outlet></Outlet>
+            </div>
+            <div>
+                <Footer></Footer>
+            </div>
+        </div>
+    );
+};
 
-  return (
-    <div>
-      Hello World
-    </div>
-  )
-}
-
-export default App
+export default App;
