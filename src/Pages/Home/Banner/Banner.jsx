@@ -13,7 +13,7 @@ const Baner = () => {
                 
                 <div className=" min-h-screen glass   flex items-center justify-center ">
                     <div className="flex justify-between container mx-auto items-center flex-col lg:flex-row  px-2   gap-5 lg:gap-10  ">
-                        <div className="flex-1 space-y-2 text-black">
+                        <div className="flex-1 space-y-2 text-black py-10 ">
                             <h1 className=" text-5xl font-bold mb-3 ">Welcome to our Task Management </h1>
                             <p className="">Task Management System , we provide some task that you can solve and judge your ability. </p>
                             <button onClick={handleNavigate} className="btn btn-warning btn-sm dark:btn-dark-warning">Get Started</button>
