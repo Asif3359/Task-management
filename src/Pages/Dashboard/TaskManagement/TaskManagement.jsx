@@ -61,7 +61,7 @@ const TaskManagement = () => {
             <DndProvider backend={HTML5Backend}>
                 <div className="flex justify-between items-start gap-3">
                     <div className='min-h-screen overflow-x-hidden  overflow-scroll h-screen w-full mt-4'>
-                        <div className="grid grid-cols-3  gap-2  ">
+                        <div className="grid grid-cols-2  gap-2  ">
                             {tasksList.map((task) => (
                                 <DraggableTask key={task._id} task={task} />
                             ))}

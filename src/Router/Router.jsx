@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import TaskManagement from "../Pages/Dashboard/TaskManagement/TaskManagement";
 import CreateNewTask from "../Pages/Dashboard/CreateNewTask/CreateNewTask";
+import TaskManagementDetails from "../Pages/Dashboard/TaskManagement/TaskManagementDetails";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/taskManagement",
                 element: <TaskManagement />,
+            },
+            {
+                path: "/dashboard/taskManagement/:id",
+                element: <TaskManagementDetails />,
             },
             {
                 path: "/dashboard/myProfile",

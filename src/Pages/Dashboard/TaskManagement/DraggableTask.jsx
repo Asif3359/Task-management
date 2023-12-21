@@ -1,6 +1,7 @@
 // DraggableTask.js
 
 import { useDrag } from 'react-dnd';
+import { Link } from 'react-router-dom';
 
 const DraggableTask = ({ task }) => {
   const [{ isDragging }, drag] = useDrag({
@@ -14,14 +15,22 @@ const DraggableTask = ({ task }) => {
   const opacity = isDragging ? 0.5 : 1;
 
   return (
-    <div
+    <Link
       ref={drag}
       style={{ opacity }}
-      className="p-4 bg-white border border-gray-300 h-[200px] rounded-md "
+      to={`${task._id}`}
+      className="p-4 bg-white border border-gray-300 space-y-2 flex flex-col justify-between rounded-md hover:scale-105 hover:bg-gray-200 duration-100 "
     >
-      <h3 className="text-lg font-bold">{task.taskStatus}</h3>
-      <p>{task.deadline}</p>
-    </div>
+      <h3 className=" font-bold text-3xl">{task.task.title}</h3>
+      <p className='overflow-hidden overflow-ellipsis'>{task.task.description}</p>
+      <div className='flex flex-col justify-between '>
+        {
+          task.taskStatus == 'complete' ? <> <p ><span className='font-bold'>Status:</span><span className='text-green-500'> {task.taskStatus}</span></p></> : <> <p ><span className='font-bold'>Status:</span>{task.taskStatus}</p></>
+        }
+
+        <p><span className='font-bold'>DeadLine:</span>{task.deadline}</p>
+      </div>
+    </Link>
   );
 };
 
