@@ -8,7 +8,7 @@ const App = () => {
             <div>
                 <PrimarySearchAppBar></PrimarySearchAppBar>
             </div>
-            <div className="min-h-screen mt-0 container mx-auto ">
+            <div className="min-h-screen mt-0  ">
                 <Outlet></Outlet>
             </div>
             <div>
