@@ -28,6 +28,11 @@ const list1 = [
         id: 3,
         link: "/singup",
         name: 'singup'
+    },
+    {
+        id: 4,
+        link: "/dashboard/taskManagement",
+        name: 'Dash Board'
     }
 ]
 

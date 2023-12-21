@@ -10,6 +10,7 @@ import SingUp from "../Pages/SingUp/SingUp";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
 import TaskManagement from "../Pages/Dashboard/TaskManagement/TaskManagement";
+import CreateNewTask from "../Pages/Dashboard/CreateNewTask/CreateNewTask";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/taskManagement",
                 element: <TaskManagement />,
+            },
+            {
+                path: "/dashboard/myProfile",
+                element: <Profile />,
+            },
+            {
+                path: "/dashboard/createNewTask",
+                element: <CreateNewTask />,
             },
         ]
     }

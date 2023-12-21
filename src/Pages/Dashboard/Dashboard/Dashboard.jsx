@@ -1,5 +1,5 @@
 import { useEffect} from 'react';
-import { FaBell, FaFlag, FaHome, FaList, FaRegEdit, FaRegGem, FaTable, FaThLarge, FaUser, FaUserCog, FaUsersCog } from 'react-icons/fa';
+import {  FaHome, FaList, FaRegEdit,  FaTable, FaThLarge, FaUser, } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 // import logo1 from "../../../assets/logo1.jpg"
 // import useAxiosPublic from '../../../Hooks/useAxiosPublic';
@@ -51,12 +51,12 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <div className='bg-base-200 min-h-full py-10 w-4/5 md:w-80'>
+                <div className=' min-h-full bg-black py-10 w-4/5 md:w-80'>
                     <div className='flex flex-col justify-start items-center gap-3'>
                         {/* <img src={logo1} className='w-12 rounded-full border-2' alt="" /> */}
                         <p className='font-bold text-2xl text-blue-500'>Task Management </p>
                     </div>
-                    <ul className="menu p-4  space-y-2   text-base-content">
+                    <ul className="menu p-4  space-y-2 text-white   ">
                         {/* Sidebar content here */}
                         {/* {
                             ourUser.role == "admin" ?
@@ -84,20 +84,13 @@ const Dashboard = () => {
                                     <div className='divider'></div>
                                 </>
                         } */}
-                        <li><NavLink to="/dashboard/adminProfile"> <span className='text-2xl mr-2'><FaUserCog /></span> Admin Profile</NavLink></li>
-                        <li><NavLink to="/dashboard/manageUser"> <span className='text-2xl mr-2'><FaUsersCog /></span> Manage Users</NavLink></li>
-                        <li><NavLink to="/dashboard/comments"> <span className='text-2xl mr-2'><FaFlag /></span> Reported Comments</NavLink></li>
-                        <li><NavLink to="/dashboard/announcement"> <span className='text-2xl mr-2'><FaBell /></span> Make Announcement</NavLink></li>
-                        <li><NavLink to="/dashboard/usersFeedback"> <span className='text-2xl mr-2'><FaBell /></span> See FeedBack</NavLink></li>
-                        <div className='divider'></div>
-                        <li><NavLink to="/dashboard/myProfile"> <span className='text-2xl mr-2'><FaUser /></span> My Profile <FaBell /></NavLink></li>
-                        <li><NavLink to="/dashboard/addPost"> <span className='text-2xl mr-2'><FaRegEdit /></span> Add Post</NavLink></li>
+                        <li><NavLink to="/dashboard/taskManagement"> <span className='text-2xl mr-2'><FaThLarge /></span> Manage Task </NavLink></li>
+                        <li><NavLink to="/dashboard/createNewTask"> <span className='text-2xl mr-2'><FaRegEdit /></span> Add New Task</NavLink></li>
                         <li><NavLink to="/dashboard/myPostTable"> <span className='text-2xl mr-2'><FaTable /></span> My Post Table</NavLink></li>
                         <li><NavLink to="/dashboard/myPost"> <span className='text-2xl mr-2'><FaThLarge /></span> My Post</NavLink></li>
-                        <li><NavLink to="/dashboard/feedBack"> <span className='text-2xl mr-2'><FaThLarge /></span>Give Feed Back</NavLink></li>
                         <div className='divider'></div>
+                        <li><NavLink to="/dashboard/myProfile"> <span className='text-2xl mr-2'><FaUser /></span> My Profile </NavLink></li>
                         <li><NavLink to="/"> <span className='text-2xl mr-2'><FaHome /> </span> Home</NavLink></li>
-                        <li><NavLink to="/membership"><span className='text-2xl mr-2'><FaRegGem /></span> Membership</NavLink></li>
                     </ul>
                 </div>
 
