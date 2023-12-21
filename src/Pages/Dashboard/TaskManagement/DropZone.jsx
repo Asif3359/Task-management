@@ -15,9 +15,10 @@ const DropZone = ({ taskStatus, onDrop }) => {
   return (
     <div
       ref={drop}
-      className={`p-4 border-2 ${borderColor} rounded-md w-full min-h-[200px] flex justify-center items-center `}
+      className={`p-4 border-2 ${borderColor} rounded-md w-full min-h-[200px]  flex flex-col justify-center items-center `}
     >
-      <h2 className="text-lg font-bold">{taskStatus}</h2>
+      <p className='text-center'>Drop</p>
+      <h2 className="text-lg font-bold underline">{taskStatus}</h2>
     </div>
   );
 };

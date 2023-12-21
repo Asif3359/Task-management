@@ -1,6 +1,8 @@
 import Footer from "./Pages/Home/Footer/Footer";
 import PrimarySearchAppBar from "./Pages/Home/AppBar/Appbar";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
@@ -14,6 +16,7 @@ const App = () => {
             <div>
                 <Footer></Footer>
             </div>
+            <ToastContainer />
         </div>
     );
 };

@@ -32,30 +32,30 @@ const TaskManagement = () => {
         // console.log();
         setTasksList(updatedTasks);
     };
-    const handleAll=()=>{
+    const handleAll = () => {
         setTasksList(tasks);
     }
-    const handleToDO=()=>{
-        const todo = tasks.filter(item=>item.taskStatus=='todo');
+    const handleToDO = () => {
+        const todo = tasks.filter(item => item.taskStatus == 'todo');
         setTasksList(todo);
     }
-    const handleOnGoing=()=>{
-        const ongoing = tasks.filter(item=>item.taskStatus=='ongoing');
+    const handleOnGoing = () => {
+        const ongoing = tasks.filter(item => item.taskStatus == 'ongoing');
         setTasksList(ongoing);
     }
-    const handleComplete=()=>{
-        const complete = tasks.filter(item=>item.taskStatus=='complete');
+    const handleComplete = () => {
+        const complete = tasks.filter(item => item.taskStatus == 'complete');
         setTasksList(complete);
     }
 
     return (
         <div>
             <div>
-                <div className="join join-horizontal ">
-                    <button onClick={handleAll} className="btn join-item">All</button>
-                    <button onClick={handleToDO} className="btn join-item">Todo</button>
-                    <button onClick={handleOnGoing} className="btn join-item">Ongoing</button>
-                    <button onClick={handleComplete} className="btn join-item">Complete</button>
+                <div className="join join-horizontal mt-4 ">
+                    <button onClick={handleAll} className="join-item text-black hover:text-white btn  bg-white hover:bg-black border-black hover:border-white">All</button>
+                    <button onClick={handleToDO} className="join-item text-black hover:text-white btn  bg-white hover:bg-black border-black hover:border-white">Todo</button>
+                    <button onClick={handleOnGoing} className="join-item text-black hover:text-white btn  bg-white hover:bg-black border-black hover:border-white">Ongoing</button>
+                    <button onClick={handleComplete} className="join-item text-black hover:text-white btn  bg-white hover:bg-black border-black hover:border-white">Complete</button>
                 </div>
             </div>
             <DndProvider backend={HTML5Backend}>
