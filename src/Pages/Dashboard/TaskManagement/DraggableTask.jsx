@@ -17,7 +17,7 @@ const DraggableTask = ({ task }) => {
     <div
       ref={drag}
       style={{ opacity }}
-      className="p-4 bg-white border border-gray-300 rounded-md mb-2"
+      className="p-4 bg-white border border-gray-300 h-[200px] rounded-md "
     >
       <h3 className="text-lg font-bold">{task.taskStatus}</h3>
       <p>{task.deadline}</p>

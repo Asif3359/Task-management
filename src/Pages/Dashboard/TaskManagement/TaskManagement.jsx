@@ -32,23 +32,47 @@ const TaskManagement = () => {
         // console.log();
         setTasksList(updatedTasks);
     };
+    const handleAll=()=>{
+        setTasksList(tasks);
+    }
+    const handleToDO=()=>{
+        const todo = tasks.filter(item=>item.taskStatus=='todo');
+        setTasksList(todo);
+    }
+    const handleOnGoing=()=>{
+        const ongoing = tasks.filter(item=>item.taskStatus=='ongoing');
+        setTasksList(ongoing);
+    }
+    const handleComplete=()=>{
+        const complete = tasks.filter(item=>item.taskStatus=='complete');
+        setTasksList(complete);
+    }
 
     return (
         <div>
             <div>
-                <h1>Todo </h1>
+                <div className="join join-horizontal ">
+                    <button onClick={handleAll} className="btn join-item">All</button>
+                    <button onClick={handleToDO} className="btn join-item">Todo</button>
+                    <button onClick={handleOnGoing} className="btn join-item">Ongoing</button>
+                    <button onClick={handleComplete} className="btn join-item">Complete</button>
+                </div>
             </div>
             <DndProvider backend={HTML5Backend}>
                 <div className="flex justify-between items-start gap-3">
-                    <div className="grid grid-cols-3 gap-2 mt-4 w-full">
-                        {tasksList.map((task) => (
-                            <DraggableTask key={task._id} task={task} />
-                        ))}
+                    <div className='min-h-screen overflow-x-hidden  overflow-scroll h-screen w-full mt-4'>
+                        <div className="grid grid-cols-3  gap-2  ">
+                            {tasksList.map((task) => (
+                                <DraggableTask key={task._id} task={task} />
+                            ))}
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-2 w-2/5 ">
-                        <DropZone taskStatus="ongoing" onDrop={handleDrop} />
-                        <DropZone taskStatus="todo" onDrop={handleDrop} />
-                        <DropZone taskStatus="complete" onDrop={handleDrop} />
+                    <div className='mt-4 w-2/5'>
+                        <div className="grid grid-cols-1 gap-2   ">
+                            <DropZone taskStatus="ongoing" onDrop={handleDrop} />
+                            <DropZone taskStatus="todo" onDrop={handleDrop} />
+                            <DropZone taskStatus="complete" onDrop={handleDrop} />
+                        </div>
                     </div>
 
                 </div>

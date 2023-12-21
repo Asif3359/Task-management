@@ -43,7 +43,7 @@ const Dashboard = () => {
                     </div>
                     <label htmlFor="my-drawer-2" className="btn  drawer-button md:hidden"><FaList /></label>
                 </div>
-                <div className='lg:px-10'>
+                <div className=''>
                     <Outlet></Outlet>
                 </div>
 
