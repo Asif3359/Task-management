@@ -2,11 +2,13 @@
 import { useForm } from "react-hook-form"
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useAuth from "../../../Hooks/UseSuth";
+import { useState } from "react";
 
 // import { toast } from "react-toastify";
 const CreateNewTask = () => {
-    const {user}= useAuth();
+    const { user } = useAuth();
     const axiosPublic = useAxiosPublic();
+    const [selectedDate, setSelectedDate] = useState('');
     const {
         register,
         reset,
@@ -16,20 +18,20 @@ const CreateNewTask = () => {
     const onSubmit = (data) => {
         // console.log(data);
         const taskInfo = {
-            userName:user.displayName,
-            userEmail:user.email,
-            task:data,
-            taskStatus:'todo'
+            userName: user.displayName,
+            userEmail: user.email,
+            task: data,
+            taskStatus: 'todo',
+            deadline:selectedDate
         }
-        axiosPublic.post('/tasks',taskInfo)
-        .then(res=>{
-            const result = res.data;
-            console.log(result);
-            if(result.acknowledged)
-            {
-                reset();
-            }
-        })
+        axiosPublic.post('/tasks', taskInfo)
+            .then(res => {
+                const result = res.data;
+                console.log(result);
+                if (result.acknowledged) {
+                    reset();
+                }
+            })
     }
 
     return (
@@ -56,7 +58,7 @@ const CreateNewTask = () => {
                             <label className="label">
                                 <span className="label-text">Title</span>
                             </label>
-                            <input type="date"  {...register("title", { required: true })} name="title" placeholder="Title" className="input w-full focus:border-2 focus:border-black input-bordered" required />
+                            <input type="date" onChange={(event) => setSelectedDate(event.target.value)} name="title" placeholder="Title" className="input w-full focus:border-2 focus:border-black input-bordered" required />
                         </div>
                     </div>
                     <div className="form-control">
