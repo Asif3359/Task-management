@@ -51,7 +51,7 @@ const LogIn = () => {
             })
     }
     return (
-        <div className="min-h-screen flex justify-center items-center w-full">
+        <div className="min-h-screen container mx-auto flex justify-center items-center w-full">
             <div className="flex justify-between items-center gap-3">
                 <div className=" hidden lg:block lg:w-3/5">
                     <img src='https://github.com/Asif3359/Forum-System/blob/main/src/assets/logIn.jpg?raw=true' className="w-4/5" alt="" />

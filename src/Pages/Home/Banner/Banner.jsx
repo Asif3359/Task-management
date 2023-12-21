@@ -21,7 +21,7 @@ const Baner = () => {
                         <div className="flex-1  lg:flex justify-end">
                             <img
                                 src="https://img.freepik.com/free-vector/hand-drawn-essay-illustration_23-2150314651.jpg?w=740&t=st=1699128827~exp=1699129427~hmac=0c34064cffaf0f3148be98ddda5bbc3f618c57ca18c5dbdb951b8648cf1b196e"
-                                className="w-full rounded-lg shadow-2xl dark:shadow-2xl-dark shadow-black "
+                                className="w-full rounded-lg  "
                             />
                         </div>
                     </div>

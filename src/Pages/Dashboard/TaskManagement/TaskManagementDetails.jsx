@@ -68,7 +68,7 @@ const TaskManagementDetails = () => {
             })
     }
     return (
-        <div>
+        <div className="w-full overflow-x-auto px-1 py-3">
             <h1 className="text-4xl font-bold">{task?.task?.title}</h1>
             <p>{task.userName}</p>
             <p>{task.userEmail}</p>
