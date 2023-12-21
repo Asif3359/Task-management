@@ -8,6 +8,8 @@ import LogIn from "../Pages/login/Login";
 import Profile from "../Pages/Profile/Profile";
 import SingUp from "../Pages/SingUp/SingUp";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import TaskManagement from "../Pages/Dashboard/TaskManagement/TaskManagement";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "profile",
-                element:<PrivateRoute><Profile /></PrivateRoute> ,
+                element: <PrivateRoute><Profile /></PrivateRoute>,
             },
             {
                 path: "singup",
@@ -32,6 +34,18 @@ const router = createBrowserRouter([
             },
         ],
     },
+    {
+        path: "dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: "/dashboard/taskManagement",
+                element: <TaskManagement />,
+            },
+        ]
+    }
+
 ]);
 
 export default router;
