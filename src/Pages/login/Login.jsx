@@ -46,6 +46,16 @@ const LogIn = () => {
                     name: result.user?.displayName,
                 }
                 console.log(userInfo);
+                toast.success(' Successfully Logged In', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
                 navigate(location?.state ? location.state : "/");
 
             })

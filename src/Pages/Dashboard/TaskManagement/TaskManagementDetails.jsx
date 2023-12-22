@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/UseSuth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import swal from "sweetalert";
 
 
 const TaskManagementDetails = () => {
@@ -44,7 +45,7 @@ const TaskManagementDetails = () => {
                 // console.log(result);
                 if (result.acknowledged) {
                     reset();
-                    toast.success('🦄 Wow so easy!', {
+                    toast.success(' Successfully edit', {
                         position: "top-right",
                         autoClose: 5000,
                         hideProgressBar: false,
@@ -52,20 +53,38 @@ const TaskManagementDetails = () => {
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
-                        theme: "dark",
+                        theme: "light",
                     });
+                    navigate('/dashboard/taskManagement')
                 }
             })
     }
     const handleDelete = () => {
-        axiosPublic.delete(`/tasks/${id}`)
-            .then(res => {
-                const result = res.data;
-                if (result.acknowledged) {
-                    reset();
-                    navigate('/dashboard/taskManagement')
+        swal({
+            title: "Are you sure?",
+            text: "You Want To  Delete It",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axiosPublic.delete(`/tasks/${id}`)
+                        .then(res => {
+                            const result = res.data;
+                            if (result.acknowledged) {
+                                swal("Delete Successfully done  ", {
+                                    icon: "success",
+                                });
+                                reset();
+                                navigate('/dashboard/taskManagement')
+                            }
+                        })
+                } else {
+                    swal("your item is safe ");
                 }
-            })
+            });
+
     }
     return (
         <div className="w-full overflow-x-auto px-1 py-3">

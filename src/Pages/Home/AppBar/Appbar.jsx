@@ -16,6 +16,7 @@ import TemporaryDrawer from './Drawer';
 import LoginIcon from '@mui/icons-material/Login';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/UseSuth';
+import swal from 'sweetalert';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -83,11 +84,29 @@ export default function PrimarySearchAppBar() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
     const handleLogOut = () => {
-        logOut()
-            .then(() => {
-                navigate('/')
-            })
-            .catch(error => console.log(error));
+        swal({
+            title: "Are you sure?",
+            text: "You Want To logged Out",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    logOut()
+                        .then(() => {
+                            swal("you Successfully logged out", {
+                                icon: "success",
+                            });
+                            navigate('/')
+                        })
+                        .catch(error => console.log(error));
+
+                } else {
+                    swal("you are still logged in");
+                }
+            });
+
     }
 
     const menuId = 'primary-search-account-menu';
