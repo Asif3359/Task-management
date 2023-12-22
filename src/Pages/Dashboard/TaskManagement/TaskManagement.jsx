@@ -60,14 +60,14 @@ const TaskManagement = () => {
             </div>
             <DndProvider backend={HTML5Backend}>
                 <div className="flex flex-col-reverse lg:flex-row justify-between  items-start gap-3">
-                    <div className='min-h-screen lg:overflow-x-hidden  lg:overflow-scroll h-screen w-full mt-4'>
+                    <div className='min-h-screen lg:overflow-x-hidden  md:overflow-scroll h-screen w-full mt-4'>
                         <div className="grid grid-cols-1 lg:grid-cols-2  gap-2  ">
                             {tasksList.map((task) => (
                                 <DraggableTask key={task._id} task={task} />
                             ))}
                         </div>
                     </div>
-                    <div className='mt-4 w-full lg:w-2/5'>
+                    <div className='mt-4 w-full lg:w-2/5 min-h-auto lg:min-h-screen bg-black p-4'>
                         <div className="grid grid-cols-1 gap-2   ">
                             <DropZone taskStatus="ongoing" onDrop={handleDrop} />
                             <DropZone taskStatus="todo" onDrop={handleDrop} />

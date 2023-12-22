@@ -19,9 +19,9 @@ const DraggableTask = ({ task }) => {
       ref={drag}
       style={{ opacity }}
       to={`${task._id}`}
-      className="p-4 bg-white border border-gray-300 space-y-2 flex flex-col justify-between rounded-md  hover:bg-gray-100 duration-100 "
+      className="p-4 bg-white border overflow-hidden overflow-ellipsis border-gray-300 space-y-2 flex flex-col justify-between rounded-md  hover:bg-gray-100 duration-100 "
     >
-      <h3 className=" font-bold text-3xl">{task.task.title}</h3>
+      <h3 className=" font-bold text-3xl overflow-ellipsis">{task.task.title}</h3>
       <p className='overflow-hidden overflow-ellipsis'>{task.task.description}</p>
       <div className='flex flex-col justify-between '>
         {
