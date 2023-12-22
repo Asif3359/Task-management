@@ -52,7 +52,7 @@ const About = () => {
                         initial={{ opacity: 0, x: -50 }}
                         animate={controls}
                         exit={{ opacity: 0, x: -50 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
                         className="lg:w-1/2 relative"
                     >
                         <img
@@ -61,8 +61,10 @@ const About = () => {
                             alt="Task Management"
                         />
                         <div
-                            className="border-8 border-white absolute w-2/5 bottom-0 lg:bottom-11 right-0 lg:right-20 lg:top-36  rounded-lg shadow-2xl glass"
-                        ></div>
+                            className="border-8 border-white absolute w-2/5 bottom-0 lg:bottom-11 right-0 lg:right-20 lg:top-36  rounded-lg  glass"
+                        >
+                            <img src="https://img.freepik.com/free-vector/add-tasks-concept-illustration_114360-4905.jpg?w=740&t=st=1703224233~exp=1703224833~hmac=251def87febf90b3f0f560a8045b86041916a0dbd2f32940d8a1703628fb9418" alt="" className="glass w-full" />
+                        </div>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -99,3 +101,4 @@ const About = () => {
 };
 
 export default About;
+

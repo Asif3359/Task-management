@@ -93,7 +93,7 @@ const Baner = () => {
                     >
                         <motion.img
                             src="https://img.freepik.com/free-vector/hand-drawn-essay-illustration_23-2150314651.jpg?w=740&t=st=1699128827~exp=1699129427~hmac=0c34064cffaf0f3148be98ddda5bbc3f618c57ca18c5dbdb951b8648cf1b196e"
-                            className="w-full rounded-lg "
+                            className="w-full lg:w-3/4 rounded-lg "
                             alt="Illustration"
                         />
                     </motion.div>
