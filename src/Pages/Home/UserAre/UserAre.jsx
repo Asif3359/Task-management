@@ -22,7 +22,7 @@ const UserTypesComponent = () => {
         // Add more user types as needed
     ];
     return (
-        <div className="container mx-auto mt-8 mb-5 text-black">
+        <div className="container mx-auto mt-8 mb-5 px-3 text-black">
             <h2 className="text-3xl font-semibold mb-4">Who Can Benefit?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {userTypes.map((userType) => (

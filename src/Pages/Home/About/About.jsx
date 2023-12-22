@@ -42,7 +42,7 @@ const About = () => {
     }, [controls, inView]);
 
     return (
-        <div className="container mx-auto mt-5" ref={ref}>
+        <div className="container mx-auto mt-5 px-2 " ref={ref}>
             <div>
                 <h1 className="text-5xl font-bold text-orange-400">About </h1>
             </div>

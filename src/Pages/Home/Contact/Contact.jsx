@@ -4,7 +4,7 @@ import { FaMapLocationDot } from "react-icons/fa6";
 
 const ContactInfo = () => {
     return (
-        <div className='bg-base-100 px-5 lg:px-10 py-20 rounded-lg border-2 my-5 container mx-auto'>
+        <div className='bg-base-100 px-5 lg:px-10 py-20  rounded-lg border-2 my-5 container mx-auto'>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10'>
                 <div className='flex justify-start gap-4 items-center'>
                     <div className='text-3xl'>

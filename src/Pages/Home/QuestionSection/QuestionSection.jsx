@@ -1,7 +1,7 @@
 
 const QuestionSection = () => {
     return (
-        <div className='mt-5 container mx-auto mb-5 lg:mt-10 flex justify-between items-start gap-10  '>
+        <div className='mt-5 container  mx-auto mb-5 lg:mt-10 flex justify-between px-2 items-center flex-col md:flex-row w-full gap-10  '>
             <div className='flex-1 space-y-1'>
                 <div className="collapse collapse-arrow  text-left">
                     <input type="radio" name="my-accordion-2" defaultChecked="checked" />
@@ -31,7 +31,7 @@ const QuestionSection = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex-1 space-y-3'>
+            <div className='flex-1 space-y-3 w-full'>
                 <div className=' flex flex-col space-y-1'>
                     <label htmlFor="email" className='text-left'>Your Email</label>
                     <input type="email" name="email" id="email" placeholder='@email' className='w-full p-3 rounded-lg border-2' />
